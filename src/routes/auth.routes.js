@@ -12,7 +12,11 @@ const router = Router();
 
 router.post("/register", validateSchema(registerSchema), register);
 router.post("/login", validateSchema(loginSchema), login);
-router.get("/verify", verifyToken);
+
+router.get("/verify", verifyToken, (req, res) => {
+  res.json({ message: 'Token is valid', user: req.user });
+});
+
 router.post("/logout", verifyToken, logout);
 
 export default router;

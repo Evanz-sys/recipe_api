@@ -8,8 +8,8 @@ import Recipe from "./models/Recipes.model.js";
 
 const app = express();
 const corsOptions = {
-    origin: 'http://localhost:4000',
-    credentials: true,
+  origin: ['http://localhost:4000', 'https://my-recipes-liart.vercel.app'],
+  credentials: true 
 };
 app.use(cors(corsOptions));
 
