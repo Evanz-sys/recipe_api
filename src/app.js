@@ -8,9 +8,10 @@ import Recipe from "./models/Recipes.model.js";
 
 const app = express();
 const corsOptions = {
-  origin: ['http://localhost:4000', 'https://my-recipes-liart.vercel.app/', 'http://localhost:3000', 'https://my-recipes-evanz-sys-projects.vercel.app/'],
+  origin: ['http://localhost:4000', 'https://my-recipes-gamma.vercel.app/', 'http://localhost:3000', 'https://my-recipes-evanz-sys-projects.vercel.app/'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
+  optionsSuccessStatus: 200,
   credentials: true 
 };
 app.use(cors(corsOptions));
