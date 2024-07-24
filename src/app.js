@@ -8,7 +8,7 @@ import Recipe from "./models/Recipes.model.js";
 
 const app = express();
 const corsOptions = {
-  origin: ['http://localhost:4000', 'https://my-recipes-gamma.vercel.app/', 'http://localhost:3000', 'https://my-recipes-evanz-sys-projects.vercel.app/'],
+  origin: ['https://my-recipes-gamma.vercel.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   optionsSuccessStatus: 200,
@@ -16,13 +16,15 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
-app.get('/api', (req, res) => {});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(cookieParser());
 
+app.get('/api', (req, res) => {
+    res.send('Servidor funcionando correctamente');
+});
 app.use("/api/auth", authRoutes);
 app.use("/api", authRoutes);
 app.use('/api/Recipe', recipeRoute)
