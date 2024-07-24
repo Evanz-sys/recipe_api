@@ -22,9 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(cookieParser());
 
-app.get('/api', (req, res) => {
-    res.send('Servidor funcionando correctamente');
-});
+app.get('/api', (req, res) => {});
 app.use("/api/auth", authRoutes);
 app.use("/api", authRoutes);
 app.use('/api/Recipe', recipeRoute)
